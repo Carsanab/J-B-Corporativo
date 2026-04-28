@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>J&B Corporativo</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--negro:#0d0d0d;
+--rojo:#e10600;
+--azul:#0057ff;
+--blanco:#ffffff;
+--gris:#f4f4f4;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#fff;
+color:#222;
+}
+
+header{
+background:var(--negro);
+padding:18px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 5px 20px rgba(0,0,0,.25);
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+color:var(--blanco);
+}
+
+.logo span{
+color:var(--rojo);
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-weight:500;
+transition:.3s;
+}
+
+nav a:hover{
+color:var(--azul);
+}
+
+.hero{
+min-height:92vh;
+background:
+linear-gradient(rgba(0,0,0,.70),rgba(0,0,0,.75)),
+url('https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1400&q=80');
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:30px;
+color:white;
+}
+
+.hero h1{
+font-size:58px;
+margin-bottom:15px;
+}
+
+.hero h1 span{
+color:var(--rojo);
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+font-size:18px;
+line-height:1.7;
+margin-bottom:30px;
+color:#eee;
+}
+
+.btn{
+display:inline-block;
+padding:14px 28px;
+background:var(--rojo);
+color:white;
+text-decoration:none;
+border-radius:8px;
+font-weight:600;
+transition:.3s;
+}
+
+.btn:hover{
+background:#b80000;
+}
+
+section{
+padding:70px 30px;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+}
+
+.title{
+text-align:center;
+font-size:36px;
+margin-bottom:45px;
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:35px 25px;
+border-radius:14px;
+box-shadow:0 8px 22px rgba(0,0,0,.08);
+text-align:center;
+transition:.3s;
+border-top:4px solid var(--rojo);
+}
+
+.card:hover{
+transform:translateY(-6px);
+border-top:4px solid var(--azul);
+}
+
+.card h3{
+font-size:30px;
+margin-bottom:18px;
+color:#002e70;
+}
+
+.card p{
+font-size:17px;
+line-height:1.7;
+color:#333;
+}
+
+.about{
+background:var(--gris);
+padding:45px;
+border-radius:18px;
+line-height:1.9;
+font-size:18px;
+text-align:center;
+}
+
+.contact{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+.form-box{
+background:var(--gris);
+padding:30px;
+border-radius:16px;
+}
+
+input,textarea{
+width:100%;
+padding:14px;
+margin-bottom:14px;
+border:none;
+border-radius:8px;
+font-family:inherit;
+}
+
+button{
+border:none;
+cursor:pointer;
+}
+
+.info-box{
+background:var(--negro);
+color:white;
+padding:30px;
+border-radius:16px;
+}
+
+.info-box h3{
+margin-bottom:15px;
+color:var(--rojo);
+}
+
+.info-box p{
+margin-bottom:12px;
+line-height:1.7;
+color:#ddd;
+}
+
+footer{
+background:var(--negro);
+padding:30px;
+text-align:center;
+color:#ccc;
+margin-top:50px;
+}
+
+footer iframe{
+width:100%;
+height:260px;
+border:0;
+border-radius:14px;
+margin-bottom:20px;
+}
+
+.whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+width:60px;
+height:60px;
+border-radius:50%;
+background:#25d366;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+text-decoration:none;
+color:white;
+box-shadow:0 8px 18px rgba(0,0,0,.3);
+z-index:999;
+}
+
+@media(max-width:900px){
+
+header{
+flex-direction:column;
+gap:15px;
+padding:20px;
+}
+
+nav a{
+margin:0 10px;
+}
+
+.hero h1{
+font-size:40px;
+}
+
+.contact{
+grid-template-columns:1fr;
+}
+}
+
+@media(max-width:600px){
+
+.hero h1{
+font-size:32px;
+}
+
+nav{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+}
+
+nav a{
+margin:0;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">J&B <span>Corporativo</span></div>
+
+<nav>
+<a href="#inicio">Inicio</a>
+<a href="#servicios">Servicios</a>
+<a href="#nosotros">Nosotros</a>
+<a href="#contacto">Contacto</a>
+</nav>
+</header>
+
+<section class="hero" id="inicio">
+<div>
+<h1>Soluciones <span>Automotrices</span></h1>
+<p>Venta de autos, reparación mecánica, smog check y grúa 24/7 con atención profesional y confianza garantizada.</p>
+
+<a href="#contacto" class="btn">Contáctanos</a>
+</div>
+</section>
+
+<section id="servicios">
+<div class="container">
+<h2 class="title">Nuestros Servicios</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>Auto Sales</h3>
+<p>Gran variedad de autos usados y seminuevos listos para ti.</p>
+</div>
+
+<div class="card">
+<h3>Auto Repair</h3>
+<p>Diagnóstico, reparación y mantenimiento general de tu auto.</p>
+</div>
+
+<div class="card">
+<h3>Towing 24/7</h3>
+<p>Asistencia en carretera con nuestro servicio de grúa confiable.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="nosotros">
+<div class="container">
+<h2 class="title">Sobre Nosotros</h2>
+
+<div class="about">
+En J&B Corporativo nos especializamos en la venta de autos de calidad, ofreciendo también servicios de mantenimiento mecánico, verificación de emisiones (smog) y servicio de grúa. Nuestra prioridad es brindarte confianza, atención personalizada y soluciones automotrices confiables.
+</div>
+</div>
+</section>
+
+<section id="contacto">
+<div class="container">
+<h2 class="title">Contáctanos</h2>
+
+<div class="contact">
+
+<div class="form-box">
+<form>
+<input type="text" placeholder="Nombre" required>
+<input type="email" placeholder="Correo" required>
+<textarea rows="5" placeholder="Mensaje"></textarea>
+<button class="btn">Enviar Mensaje</button>
+</form>
+</div>
+
+<div class="info-box">
+<h3>Información</h3>
+<p>📍 792 N Street, Firebaugh, California</p>
+<p>📞 (559) 659-3637</p>
+<p>✉ contacto@jbcorporativo.com</p>
+<p>🕒 Lunes a Sábado - 8AM a 6PM</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<footer>
+
+<iframe src="https://www.google.com/maps?q=792+N+Street,+Firebaugh,+California+93622&output=embed" loading="lazy"></iframe>
+
+<p>© 2026 J&B Corporativo | Todos los derechos reservados</p>
+
+</footer>
+
+<a href="https://wa.me/1559659937" class="whatsapp">💬</a>
+
+</body>
+</html>
