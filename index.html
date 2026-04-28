@@ -63,6 +63,7 @@ nav a:hover{
 color:var(--azul);
 }
 
+/*
 .hero{
 min-height:92vh;
 background:
@@ -77,6 +78,85 @@ text-align:center;
 padding:30px;
 color:white;
 }
+*/
+
+
+.hero{
+position:relative;
+min-height:92vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:30px;
+overflow:hidden;
+color:white;
+}
+
+.hero::before,
+.hero::after{
+content:'';
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-size:cover;
+background-position:center;
+z-index:-2;
+animation:fade1 15s infinite;
+}
+
+.hero::before{
+background-image:url('images/firebaught.jpg');
+animation:fade1 15s infinite;
+}
+
+.hero::after{
+background-image:url('images/firebaught-1.jpeg');
+animation:fade2 15s infinite;
+}
+
+.hero .bg3{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:url('images/firebaught-2.jpeg') center/cover no-repeat;
+background-size:cover;
+z-index:-2;
+animation:fade3 15s infinite;
+}
+
+.hero .overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.65);
+z-index:-1;
+}
+
+@keyframes fade1{
+0%,32%{opacity:1;}
+35%,100%{opacity:0;}
+}
+
+@keyframes fade2{
+0%,32%{opacity:0;}
+35%,65%{opacity:1;}
+68%,100%{opacity:0;}
+}
+
+@keyframes fade3{
+0%,65%{opacity:0;}
+68%,100%{opacity:1;}
+}
+
+/* Final animación hero */
+
 
 .hero h1{
 font-size:58px;
@@ -269,6 +349,21 @@ grid-template-columns:1fr;
 
 @media(max-width:600px){
 
+.hero div{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+}
+
+.hero .btn{
+display:block;
+width:100%;
+max-width:260px;
+margin:10px auto;
+text-align:center;
+}
+
 .hero h1{
 font-size:32px;
 }
@@ -301,11 +396,24 @@ margin:0;
 </header>
 
 <section class="hero" id="inicio">
+
+<div class="bg3"></div>
+<div class="overlay"></div>
+
 <div>
 <h1>Soluciones <span>Automotrices</span></h1>
-<p>Venta de autos, reparación mecánica, smog check y grúa 24/7 con atención profesional y confianza garantizada.</p>
+
+<p>
+Venta de autos, reparación mecánica, smog check y grúa 24/7 con atención profesional y confianza garantizada.
+</p>
 
 <a href="#contacto" class="btn">Contáctanos</a>
+
+<a href="https://www.google.com/search?q=j+and+b+auto+sales+firebaugh&rlz=1C1UEAD_esUS1167US1167&oq=j+and+b+fireba&gs_lcrp=EgZjaHJvbWUqCAgBEAAYFhgeMgYIABBFGDkyCAgBEAAYFhgeMggIAhAAGBYYHjIICAMQABgWGB4yCAgEEAAYFhgeMgoIBRAAGIAEGKIEMgcIBhAAGO8FMgoIBxAAGIAEGKIEMgcICBAAGO8FMgoICRAAGIAEGKIE0gEJMTI0MDRqMGo3qAIIsAIB8QVOOAtU6_4hew&sourceid=chrome&ie=UTF-8" target="_blank" class="btn"
+style="background:var(--azul); margin-left:10px;">
+Ver Autos Disponibles
+</a>
+
 </div>
 </section>
 
